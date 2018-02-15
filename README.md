@@ -1,1 +1,1 @@
-Exemplos de pequenos códigos ou projetos utilizando angular
+Exemplos de códigos ou projetos utilizando angular >= 5
