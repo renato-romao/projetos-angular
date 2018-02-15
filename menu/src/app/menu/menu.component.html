@@ -1,0 +1,23 @@
+<div class="basic-container">
+  <mat-toolbar color="primary">
+    Exemplo de um menu din&acirc;mico
+  </mat-toolbar>
+  <mat-toolbar class="menu-bar mat-elevation-z1">
+    <span *ngFor="let item of navItems">
+      
+      <span *ngIf="item.items && item.items.length > 0">
+        <button mat-button [matMenuTriggerFor]="menu.itemMenu" 
+        [disabled]="item.desabiliar">
+          {{item.nome}}
+        </button>
+        <app-menu-item #menu [items]="item.items"></app-menu-item>
+      </span>
+      
+      <span *ngIf="!item.items || item.items.length === 0">
+        <button mat-button [routerLink]="item.route">
+          {{item.nome}}
+        </button>
+      </span>
+    </span>
+  </mat-toolbar>  
+</div>
